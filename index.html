@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>ToDoアプリ</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>ToDoアプリ</h1>
+                <!--入力欄-->
+                <div class="input-area">
+                    <!--入力フォーム-->
+                    <input id="taskInput" type="text" placeholder="タスクを入力">
+                    <!--追加ボタン-->
+                    <button id="addButton">追加</button>
+                </div>
+                <!--タスク数-->
+                <div class="info">
+                    <p>タスク数：<span id="taskCount">0</span></p>
+                </div>
+                <!--フィルター-->
+                <div class="filters">
+                    <button onclick="setFilter('all')">すべて</button>
+                    <button onclick="setFilter('active')">未完了</button>
+                    <button onclick="setFilter('completed')">完了</button>
+                </div>
+                <!--タスクリスト-->
+                <ul id="taskList"></ul>
+        </div>
+        <script src="../js/script.js"></script>
+    </body>
+</html>
