@@ -12,7 +12,7 @@ loadTasks();
 //ボタンを押したら処理を実行
 addButton.addEventListener("click", addTask);
 //Enterキーで追加（入力欄でEnterを押すと追加）
-teskInput.addEventListener("keypress", function(e){
+taskInput.addEventListener("keypress", function(e){
     if(e.key === "Enter"){
         addTask();
     }
@@ -49,14 +49,14 @@ function renderTasks(){
     if(currentFilter === "completed"){
     filteredTasks = tasks.filter(t => t.completed);
     }
-}
+
     //配列を１つずつ処理
     filteredTasks.forEach(task => {
     const li = document.createElement("li"); //<li>を作成
     //完了のチェック
     if(task.completed){
     li.classList.add("completed"); //<li>に.completedが適用され線が付く
-}
+    }
     //タスクテキスト作成（表示）
     const span = document.createElement("span");
     span.textContent = task.text;
@@ -65,15 +65,15 @@ function renderTasks(){
     task.completed = !task.completed; //"!"はtrueとfalseの反転
     saveTasks();
     renderTasks();
-};
+    };
 
-//削除ボタン
-const deleteBtn = document.createElement("button");
-deleteBtn.textContent = "削除";
-deleteBtn.classList.add("delete-btn");
+    //削除ボタン
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "削除";
+    deleteBtn.classList.add("delete-btn");
 
-//削除処理
-deleteBtn.onclick = () => {
+    //削除処理
+    deleteBtn.onclick = () => {
     //このID以外を残す
     tasks = tasks.filter(t => t.id !== task.id);
     saveTasks();
@@ -84,6 +84,9 @@ deleteBtn.onclick = () => {
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
     });
+
+    updateTaskCount();
+}
 
 //タスク数表示
 function updateTaskCount()
