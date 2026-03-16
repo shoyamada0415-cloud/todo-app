@@ -1,7 +1,7 @@
 # ToDo管理アプリ
 
 JavaScript学習の一環として
-ToDo管理アプリを作成しました。
+ToDo管理アプリを作成しました
 
 ## 機能
 
@@ -20,4 +20,5 @@ JavaScript
 
 ## 公開URL
 
-https://shoyamada0415-cloud.github.io/todo-app/# todo-app
+https://shoyamada0415-cloud.github.io/todo-app/
+# todo-app
